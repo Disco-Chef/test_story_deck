@@ -1,0 +1,7 @@
+<h1>Businesses#edit</h1>
+<%= simple_form_for(@business) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :website %>
+  <%= f.submit "Update!" %>
+<% end %>

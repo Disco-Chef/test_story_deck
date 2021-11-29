@@ -1,0 +1,11 @@
+<h1>Businesses#show</h1>
+<h2><%= @business.name %></h2>
+<p><%= @business.description %></p>
+<ul>
+  <% @business.stories.each do |story| %>
+    <li>
+      <p><%= link_to story.title, story_path(story) %></p>
+      <p><%= story.categories.first.name %></p>
+    </li>
+  <% end %>
+</ul>
