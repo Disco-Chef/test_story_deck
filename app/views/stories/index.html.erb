@@ -1,0 +1,15 @@
+<h1>Stories#Index</h1>
+
+<% @stories.each do |story| %>
+  <h2><%= story.title %></h2>
+  <h3><%= story.description %></h3>
+
+
+  <ul>
+    <% story.categories.each do |category| %>
+      <li>
+        <%= category.name %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

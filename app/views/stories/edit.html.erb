@@ -1,0 +1,7 @@
+<h1>Stories#edit</h1>
+<%= simple_form_for(@story) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :published %>
+  <%= f.submit "Update!" %>
+<% end %>

@@ -1,6 +1,9 @@
 <h1>Businesses#show</h1>
 <h2><%= @business.name %></h2>
-<p><%= @business.description %></p>
+<h3><%= @business.description %></h3>
+<%= link_to "Create a Story for #{@business.name}", new_business_story_path(@business) %>
+<%= link_to "Edit Business Info", edit_business_path(@business) %>
+
 <ul>
   <% @business.stories.each do |story| %>
     <li>
