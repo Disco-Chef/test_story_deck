@@ -1,4 +1,4 @@
-categories = %w[18-25, 26-35, 36-45, tech, garden, kitchen, fashion, retro, steampunk]
+categories = %w[18-25 26-35 36-45 tech garden kitchen fashion retro steampunk]
 
 Category.destroy_all
 Story.destroy_all
