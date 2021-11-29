@@ -17,6 +17,12 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(story_params)
     @story.business = @business
+
+    params[:story][:category_ids].shift
+    params[:story][:category_ids].each do |category_id|
+      @story.categories << Category.find(category_id)
+    end
+
     if @story.save
       redirect_to story_path(@story)
     else
@@ -30,6 +36,13 @@ class StoriesController < ApplicationController
 
   def update
     if @story.update(story_params)
+
+      @story.categories.destroy_all
+      params[:story][:category_ids].shift
+      params[:story][:category_ids].each do |category_id|
+        @story.categories << Category.find(category_id)
+      end
+
       redirect_to story_path(@story)
     else
       set_story
